@@ -7,25 +7,25 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseServicio {
-    
+
     @JsonProperty("tipDocumento")
     private String tipDocumento;
-    
+
     @JsonProperty("numDocumento")
     private String numDocumento;
-    
+
     @JsonProperty("codCliente")
     private String codCliente;
-    
+
     @JsonProperty("nombres")
     private String nombres;
-    
+
     @JsonProperty("apellidos")
     private String apellidos;
-    
+
     @JsonProperty("fecha_Nacimiento")
     private String fecha_Nacimiento;
-    
+
     @JsonProperty("productos")
     private List<Productos> productos;
 
@@ -84,6 +84,5 @@ public class ResponseServicio {
     public void setProductos(List<Productos> productos) {
         this.productos = productos;
     }
-
 
 }

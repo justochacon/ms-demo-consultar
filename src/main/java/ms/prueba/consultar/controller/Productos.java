@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Productos {
-    
+
     @JsonProperty("codProducto")
     private String codProducto;
-    
+
     @JsonProperty("nomProducto")
     private String nomProducto;
-    
+
     @JsonProperty("tecnologia")
     private String tecnologia;
 
@@ -38,6 +38,5 @@ public class Productos {
     public void setTecnologia(String tecnologia) {
         this.tecnologia = tecnologia;
     }
-    
-    
+
 }
