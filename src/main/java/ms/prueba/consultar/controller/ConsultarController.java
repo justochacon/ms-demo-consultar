@@ -49,15 +49,15 @@ public class ConsultarController {
     @RequestMapping(value = "/registrarReclamo", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseServicioReclamo registrar(@RequestBody RequestServiceReclamo request) {
-        
+
         ResponseServicioReclamo response = new ResponseServicioReclamo();
-        
+
         Integer cod = 12343;
-        
+
         response.setCodRespuesta("0000");
         response.setMsgRespuesta("procesos exitoso");
         response.setCodigoReclamo(request.getIdProducto() + cod.toString() + request.getNumDocumento());
-        
+
         return response;
     }
 

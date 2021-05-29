@@ -1,12 +1,5 @@
 package ms.prueba.consultar.controller;
 
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.File;
-
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,27 +16,6 @@ public class ConsultarControllerTest {
 
     @Autowired
     private WebTestClient webCliente;
-    
-    private static RequestServiceReclamo requestok;
-    
-    @BeforeAll
-    public static void setUp() {
-        
-        ObjectMapper mapper = new ObjectMapper();
-        ClassLoader classLoader = ConsultarControllerTest.class.getClassLoader();
-
-        TypeReference<RequestServiceReclamo> Request = new TypeReference<RequestServiceReclamo>() {
-        };
-     try {   
-        requestok =
-                mapper.readValue(new File(classLoader.getResource("request/casoOK1.json").getFile()),
-                        Request);
-        
-    } catch (Exception e) {
-        // TODO: handle exception
-        e.printStackTrace();
-    }
-    }
 
     @Test
     void Test01Ok() {
@@ -59,16 +31,18 @@ public class ConsultarControllerTest {
                 .expectBody(ResponseServicio.class);
 
     }
-    
+
     @Test
-    void indexPostTest01() {
-        this.webCliente.post()
-            .uri("/demo/v1/registrarReclamo")
-            .accept(MediaType.APPLICATION_JSON)
-            .body(BodyInserters.fromValue(requestok))
-            .exchange()
-            .expectStatus().isEqualTo(HttpStatus.CREATED)
-            .expectBody(ResponseServicioReclamo.class);
+    void Test02ok() {
+        RequestServiceReclamo request = new RequestServiceReclamo();
+        request.setTipoDocumento("DNI");
+        request.setNumDocumento("72580356");
+        request.setmReclamo("lentitud en internet");
+        request.setDescripcionReclamo("cada 2 horas se va el internet");
+        request.setIdProducto("PR0001");
+        this.webCliente.post().uri("/demo/v1/registrarReclamo").accept(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromValue(request)).exchange().expectStatus().isEqualTo(HttpStatus.CREATED)
+                .expectBody(ResponseServicioReclamo.class);
     }
 
 }

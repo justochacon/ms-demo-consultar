@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RequestService {
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tipDocumento")
     private String tipDocumento;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("numDocumento")
     private String numDocumento;
@@ -28,6 +28,5 @@ public class RequestService {
     public void setNumDocumento(String numDocumento) {
         this.numDocumento = numDocumento;
     }
-    
-    
+
 }

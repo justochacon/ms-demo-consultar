@@ -4,23 +4,23 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RequestServiceReclamo {
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tipoDocumento")
     private String tipoDocumento;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("numDocumento")
     private String numDocumento;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("mReclamo")
     private String mReclamo;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("descripcionReclamo")
     private String descripcionReclamo;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("idProducto")
     private String idProducto;
@@ -64,6 +64,5 @@ public class RequestServiceReclamo {
     public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
-    
-    
+
 }
