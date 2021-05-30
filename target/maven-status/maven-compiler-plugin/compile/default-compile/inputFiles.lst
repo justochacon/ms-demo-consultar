@@ -1,8 +1,11 @@
 C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\ConsultarController.java
-C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\ResponseServicio.java
-C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\ResponseServicioReclamo.java
-C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\Productos.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\config\package-info.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\RequestServiceReclamo.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\Productos.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\ResponseServicioReclamo.java
 C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\App.java
-C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\RequestService.java
-C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\RequestServiceReclamo.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\package-info.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\RequestService.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\config\Configuracion.java
+C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\model\ResponseServicio.java
 C:\Users\ejustoch\Documents\git\carpeta\ms-demo-consultar\src\main\java\ms\prueba\consultar\controller\package-info.java

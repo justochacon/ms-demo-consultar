@@ -1,7 +1,8 @@
-ms\prueba\consultar\controller\Productos.class
-ms\prueba\consultar\controller\ResponseServicio.class
-ms\prueba\consultar\controller\RequestService.class
+ms\prueba\consultar\model\RequestServiceReclamo.class
+ms\prueba\consultar\model\ResponseServicio.class
+ms\prueba\consultar\config\Configuracion.class
+ms\prueba\consultar\model\ResponseServicioReclamo.class
 ms\prueba\consultar\controller\ConsultarController.class
-ms\prueba\consultar\controller\RequestServiceReclamo.class
+ms\prueba\consultar\model\RequestService.class
 ms\prueba\consultar\App.class
-ms\prueba\consultar\controller\ResponseServicioReclamo.class
+ms\prueba\consultar\model\Productos.class
