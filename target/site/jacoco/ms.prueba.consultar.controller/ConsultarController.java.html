@@ -3,6 +3,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,53 +13,65 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import ms.prueba.consultar.config.Configuracion;
+import ms.prueba.consultar.model.Productos;
+import ms.prueba.consultar.model.RequestService;
+import ms.prueba.consultar.model.RequestServiceReclamo;
+import ms.prueba.consultar.model.ResponseServicio;
+import ms.prueba.consultar.model.ResponseServicioReclamo;
+
 @RestController
 @RequestMapping(&quot;/demo/v1&quot;)
-<span class="fc" id="L17">public class ConsultarController {</span>
-
+<span class="fc" id="L25">public class ConsultarController {</span>
+    
+    @Autowired
+    private Configuracion properties;
+    
     @GetMapping(value = &quot;/consultar&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseServicio consultar(RequestService request) {
 
-<span class="fc" id="L23">        ResponseServicio response = new ResponseServicio();</span>
-<span class="fc" id="L24">        Productos producto = new Productos();</span>
-<span class="fc" id="L25">        producto.setCodProducto(&quot;PRO0001&quot;);</span>
-<span class="fc" id="L26">        producto.setNomProducto(&quot;TV&quot;);</span>
-<span class="fc" id="L27">        producto.setTecnologia(&quot;satelital&quot;);</span>
+<span class="fc" id="L34">        ResponseServicio response = new ResponseServicio();</span>
+<span class="fc" id="L35">        Productos producto = new Productos();</span>
+<span class="fc" id="L36">        producto.setCodProducto(properties.getPrefijcodigoProducto() + &quot;0001&quot;);</span>
+<span class="fc" id="L37">        producto.setNomProducto(&quot;TV&quot;);</span>
+<span class="fc" id="L38">        producto.setTecnologia(&quot;satelital&quot;);</span>
+<span class="fc" id="L39">        producto.setStatus(properties.getStatus());</span>
 
-<span class="fc" id="L29">        Productos producto1 = new Productos();</span>
-<span class="fc" id="L30">        producto1.setCodProducto(&quot;PRO0002&quot;);</span>
-<span class="fc" id="L31">        producto1.setNomProducto(&quot;INTERNET&quot;);</span>
-<span class="fc" id="L32">        producto1.setTecnologia(&quot;fibra optica&quot;);</span>
+<span class="fc" id="L41">        Productos producto1 = new Productos();</span>
+<span class="fc" id="L42">        producto1.setCodProducto(properties.getPrefijcodigoProducto() + &quot;0002&quot;);</span>
+<span class="fc" id="L43">        producto1.setNomProducto(&quot;INTERNET&quot;);</span>
+<span class="fc" id="L44">        producto1.setTecnologia(&quot;fibra optica&quot;);</span>
+<span class="fc" id="L45">        producto1.setStatus(properties.getStatus());</span>
 
-<span class="fc" id="L34">        List&lt;Productos&gt; productos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L47">        List&lt;Productos&gt; productos = new ArrayList&lt;&gt;();</span>
         ;
-<span class="fc" id="L36">        productos.add(producto);</span>
-<span class="fc" id="L37">        productos.add(producto1);</span>
-<span class="fc" id="L38">        response.setProductos(productos);</span>
-<span class="fc" id="L39">        response.setApellidos(&quot;Justo Chacon&quot;);</span>
-<span class="fc" id="L40">        response.setNombres(&quot;Ever Alejandro&quot;);</span>
-<span class="fc" id="L41">        response.setFecha_Nacimiento(&quot;10/08/1997&quot;);</span>
-<span class="fc" id="L42">        response.setNumDocumento(request.getNumDocumento());</span>
-<span class="fc" id="L43">        response.setTipDocumento(request.getTipDocumento());</span>
-<span class="fc" id="L44">        response.setCodCliente(&quot;C00021&quot;);</span>
+<span class="fc" id="L49">        productos.add(producto);</span>
+<span class="fc" id="L50">        productos.add(producto1);</span>
+<span class="fc" id="L51">        response.setProductos(productos);</span>
+<span class="fc" id="L52">        response.setApellidos(&quot;Justo Chacon&quot;);</span>
+<span class="fc" id="L53">        response.setNombres(&quot;Ever Alejandro&quot;);</span>
+<span class="fc" id="L54">        response.setFecha_Nacimiento(&quot;10/08/1997&quot;);</span>
+<span class="fc" id="L55">        response.setNumDocumento(request.getNumDocumento());</span>
+<span class="fc" id="L56">        response.setTipDocumento(request.getTipDocumento());</span>
+<span class="fc" id="L57">        response.setCodCliente(properties.getPrefijCodigoCliente() + &quot;00021&quot;);</span>
 
-<span class="fc" id="L46">        return response;</span>
+<span class="fc" id="L59">        return response;</span>
     }
 
     @RequestMapping(value = &quot;/registrarReclamo&quot;, method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseServicioReclamo registrar(@RequestBody RequestServiceReclamo request) {
 
-<span class="fc" id="L53">        ResponseServicioReclamo response = new ResponseServicioReclamo();</span>
+<span class="fc" id="L66">        ResponseServicioReclamo response = new ResponseServicioReclamo();</span>
 
-<span class="fc" id="L55">        Integer cod = 12343;</span>
+<span class="fc" id="L68">        Integer cod = 12343;</span>
 
-<span class="fc" id="L57">        response.setCodRespuesta(&quot;0000&quot;);</span>
-<span class="fc" id="L58">        response.setMsgRespuesta(&quot;procesos exitoso&quot;);</span>
-<span class="fc" id="L59">        response.setCodigoReclamo(request.getIdProducto() + cod.toString() + request.getNumDocumento());</span>
+<span class="fc" id="L70">        response.setCodRespuesta(properties.getCodigoRepuesta());</span>
+<span class="fc" id="L71">        response.setMsgRespuesta(properties.getMensajeRepuesta());</span>
+<span class="fc" id="L72">        response.setCodigoReclamo(properties.getPreFijReclamo() + &quot;: &quot; + request.getIdProducto() + cod.toString() + request.getNumDocumento());</span>
 
-<span class="fc" id="L61">        return response;</span>
+<span class="fc" id="L74">        return response;</span>
     }
 
 }
